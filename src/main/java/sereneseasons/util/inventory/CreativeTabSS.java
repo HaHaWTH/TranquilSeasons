@@ -21,7 +21,7 @@ public class CreativeTabSS extends CreativeTabs
     }
 
     @Override
-    public ItemStack getTabIconItem()
+    public ItemStack createIcon()
     {
         return new ItemStack(SSItems.ss_icon);
     }
@@ -33,7 +33,7 @@ public class CreativeTabSS extends CreativeTabs
         super.displayAllRelevantItems(itemList);
         for (EntityList.EntityEggInfo eggInfo : EntityList.ENTITY_EGGS.values())
         {
-            if (eggInfo.spawnedID.getResourceDomain().equals(SereneSeasons.MOD_ID))
+            if (eggInfo.spawnedID.getNamespace().equals(SereneSeasons.MOD_ID))
             {
                 ItemStack itemstack = new ItemStack(Items.SPAWN_EGG, 1);
                 ItemMonsterPlacer.applyEntityIdToItemStack(itemstack, eggInfo.spawnedID);

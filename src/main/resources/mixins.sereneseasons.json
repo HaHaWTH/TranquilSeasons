@@ -1,0 +1,15 @@
+{
+	"package": "sereneseasons.mixin",
+	"required": true,
+	"refmap": "mixins.sereneseasons.refmap.json",
+	"target": "@env(DEFAULT)",
+	"minVersion": "0.8.5",
+	"compatibilityLevel": "JAVA_8",
+	"mixins": [
+		"general.WorldMixin"
+	],
+	"server": [],
+	"client": [
+		"client.EntityRendererMixin"
+	]
+}

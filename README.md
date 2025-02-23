@@ -1,9 +1,7 @@
-<p align="center"><img src="https://i.imgur.com/q2btuwh.png"></p>
+## Tranquil Seasons
 
-**Serene Seasons** is a **Minecraft mod** that adds **seasons** with **changing colors, temperature shifting, and more!**
+Unofficial maintained 1.12.2 fork of the original [Serene Seasons](https://github.com/Glitchfiend/SereneSeasons/) mod.
 
------------------
-
- [<img src="http://i.creativecommons.org/l/by-nc-nd/3.0/88x31.png">](http://creativecommons.org/licenses/by-nc-nd/4.0/deed.en_US)
-
-Serene Seasons is licensed under a [Creative Commons Attribution-NonCommercial-NoDerivs 4.0 Unported License](http://creativecommons.org/licenses/by-nc-nd/4.0/deed.en_US).
+## Changes
+- Migrate to Mixin system from ASM
+- Fix long-standing visual issue in desert biomes when installed with Optifine[(Optifine#5959)](https://github.com/sp614x/optifine/issues/5959)

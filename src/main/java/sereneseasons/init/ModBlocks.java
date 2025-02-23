@@ -56,7 +56,7 @@ public class ModBlocks
     public static Block registerBlock(Block block, String blockName, CreativeTabs tab, boolean registerItemModels)
     {
         Preconditions.checkNotNull(block, "Cannot register a null block");
-        block.setUnlocalizedName(blockName);
+        block.setTranslationKey(blockName);
         block.setCreativeTab(tab);
 
         if (block instanceof ISSBlock)
@@ -72,7 +72,7 @@ public class ModBlocks
             if (defaultState == null)
             {
                 defaultState = block.getBlockState().getBaseState();
-                SereneSeasons.logger.error("Missing default state for " + block.getUnlocalizedName());
+                SereneSeasons.logger.error("Missing default state for " + block.getTranslationKey());
             }
 
             // Some blocks such as doors and slabs register their items after the blocks (getItemClass returns null)

@@ -20,10 +20,10 @@ import sereneseasons.init.ModFertility;
 import sereneseasons.init.ModHandlers;
 import sereneseasons.init.ModItems;
 
-@Mod(modid = SereneSeasons.MOD_ID, version = SereneSeasons.MOD_VERSION, name = SereneSeasons.MOD_NAME, dependencies = "required-after:forge@[1.0.0.0,)")
+@Mod(modid = SereneSeasons.MOD_ID, version = SereneSeasons.MOD_VERSION, name = SereneSeasons.MOD_NAME, dependencies = "required-after:mixinbooter@[7.1,);")
 public class SereneSeasons
 {
-    public static final String MOD_NAME = "Serene Seasons";
+    public static final String MOD_NAME = "Tranquil Seasons";
     public static final String MOD_ID = "sereneseasons";
     public static final String MOD_VERSION = "@MOD_VERSION@";
 

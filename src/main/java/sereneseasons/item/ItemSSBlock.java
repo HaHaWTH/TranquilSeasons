@@ -60,12 +60,12 @@ public class ItemSSBlock extends ItemBlock
     }
 
     @Override
-    public String getUnlocalizedName(ItemStack stack)
+    public String getTranslationKey(ItemStack stack)
     {
         ImmutableSet<IBlockState> presets = BlockStateUtils.getBlockPresets(this.block);
         if (presets.isEmpty())
         {
-            return super.getUnlocalizedName();
+            return super.getTranslationKey();
         }
         else
         {
@@ -73,7 +73,7 @@ public class ItemSSBlock extends ItemBlock
             IBlockState oldState = block.getStateFromMeta(meta);
             IBlockState newState = BlockStateUtils.getPresetState(oldState);
 
-            return super.getUnlocalizedName() + "." + tanBlock.getStateName(newState);
+            return super.getTranslationKey() + "." + tanBlock.getStateName(newState);
         }
     }
 }

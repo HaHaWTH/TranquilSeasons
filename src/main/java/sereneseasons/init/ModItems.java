@@ -35,7 +35,7 @@ public class ModItems
 
     public static Item registerItem(Item item, String name, CreativeTabs tab)
     {
-        item.setUnlocalizedName(name);
+        item.setTranslationKey(name);
         if (tab != null)
         {
             item.setCreativeTab(CreativeTabSS.instance);

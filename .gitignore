@@ -1,20 +1,22 @@
-/build/
-/bin/
-/out/
-/repo/
-/run/
-.idea/*
-/.gradle/
-/.settings/
-/.classpath
-/.project
+# eclipse
+bin
+*.launch
+.settings
+.metadata
+.classpath
+.project
 
-# OS generated files
-*.DS_Store
-
-# IntelliJ project files
-*.iml
+# idea
+out
 *.ipr
 *.iws
-src/main/resources/META-INF/biomesoplenty_at.cfg
-*.launch
+*.iml
+.idea
+
+# gradle
+build
+.gradle
+
+# other
+eclipse
+run

@@ -7,16 +7,43 @@
  ******************************************************************************/
 package sereneseasons.asm;
 
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
+import java.util.function.Supplier;
 
+import com.google.common.collect.ImmutableMap;
 import net.minecraftforge.fml.relauncher.IFMLLoadingPlugin;
+import zone.rong.mixinbooter.IEarlyMixinLoader;
 
-public class SSLoadingPlugin implements IFMLLoadingPlugin
-{
+@IFMLLoadingPlugin.Name("SSLoadingPlugin")
+public class SSLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader {
+
+    private static final Map<String, Supplier<Boolean>> mixinConfigs = ImmutableMap.copyOf(new LinkedHashMap<String, Supplier<Boolean>>()
+    {
+        {
+            put("mixins.sereneseasons.json", () -> true);
+        }
+    });
+
+    @Override
+    public List<String> getMixinConfigs() {
+        return new ArrayList<>(mixinConfigs.keySet());
+    }
+
+    @Override
+    public boolean shouldMixinConfigQueue(String mixinConfig) {
+        Supplier<Boolean> sidedSupplier = mixinConfigs.get(mixinConfig);
+        if (sidedSupplier != null) {
+            return sidedSupplier.get();
+        }
+        return true;
+    }
     @Override
     public String[] getASMTransformerClass()
     {
-        return new String[] { "sereneseasons.asm.transformer.EntityRendererTransformer", "sereneseasons.asm.transformer.WorldTransformer" };
+        return new String[] {};
     }
 
     @Override

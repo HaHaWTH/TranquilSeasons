@@ -66,7 +66,7 @@ public class ClientProxy extends CommonProxy
             item.getSubItems(CreativeTabSS.instance, subItems);
             for (ItemStack subItem : subItems)
             {
-                String subItemName = item.getUnlocalizedName(subItem);
+                String subItemName = item.getTranslationKey(subItem);
                 subItemName =  subItemName.substring(subItemName.indexOf(".") + 1); // remove 'item.' from the front
 
                 ModelLoader.registerItemVariants(item, new ResourceLocation(SereneSeasons.MOD_ID, subItemName));
@@ -75,7 +75,7 @@ public class ClientProxy extends CommonProxy
         }
         else
         {
-            ModelLoader.setCustomModelResourceLocation(item, 0, new ModelResourceLocation(SereneSeasons.MOD_ID + ":" + item.delegate.name().getResourcePath(), "inventory"));
+            ModelLoader.setCustomModelResourceLocation(item, 0, new ModelResourceLocation(SereneSeasons.MOD_ID + ":" + item.delegate.name().getPath(), "inventory"));
         }
     }
     
