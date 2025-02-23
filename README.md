@@ -12,6 +12,10 @@ Unofficial maintained 1.12.2 fork of the original [Serene Seasons](https://githu
 2. Decompress the zip into a folder
 3. Run "./gradlew build" inside the terminal
 
+## Dependency
+
+This fork requires [MixinBooter](https://www.curseforge.com/minecraft/mc-mods/mixin-booter) to be installed.
+
 -----------------
 
 [<img src="http://i.creativecommons.org/l/by-nc-nd/3.0/88x31.png">](http://creativecommons.org/licenses/by-nc-nd/4.0/deed.en_US)
