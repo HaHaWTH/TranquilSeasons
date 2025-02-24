@@ -13,6 +13,7 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
+import sereneseasons.Tags;
 import sereneseasons.command.SSCommand;
 import sereneseasons.init.ModBlocks;
 import sereneseasons.init.ModConfig;
@@ -25,7 +26,7 @@ public class SereneSeasons
 {
     public static final String MOD_NAME = "Tranquil Seasons";
     public static final String MOD_ID = "sereneseasons";
-    public static final String MOD_VERSION = "@MOD_VERSION@";
+    public static final String MOD_VERSION = Tags.VERSION;
 
     @Instance(MOD_ID)
     public static SereneSeasons instance;

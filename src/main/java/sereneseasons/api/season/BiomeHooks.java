@@ -3,9 +3,15 @@ package sereneseasons.api.season;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
+import sereneseasons.util.ReflectionUtils;
+
+import java.lang.reflect.Method;
 
 public class BiomeHooks
 {
+    private static final String className = "sereneseasons.season.SeasonASMHelper";
+    private static final Method getFloatTemperature_World_Biome_BlockPos = ReflectionUtils.getMethod(className, "getFloatTemperature", World.class, Biome.class, BlockPos.class);
+    private static final Method getFloatTemperature_SubSeason_Biome_BlockPos = ReflectionUtils.getMethod(className, "getFloatTemperature", Season.SubSeason.class, Biome.class, BlockPos.class);
     /**
      * An override of {@link Biome#getFloatTemperature(BlockPos)}
      */
@@ -13,7 +19,7 @@ public class BiomeHooks
     {
         try
         {
-            return (float)Class.forName("sereneseasons.season.SeasonASMHelper").getMethod("getFloatTemperature", World.class, Biome.class, BlockPos.class).invoke(null, world, biome, pos);
+            return (float) getFloatTemperature_World_Biome_BlockPos.invoke(null, world, biome, pos);
         }
         catch (Exception e)
         {
@@ -28,7 +34,7 @@ public class BiomeHooks
     {
         try
         {
-            return (float)Class.forName("sereneseasons.season.SeasonASMHelper").getMethod("getFloatTemperature", Season.SubSeason.class, Biome.class, BlockPos.class).invoke(null, subSeason, biome, pos);
+            return (float) getFloatTemperature_SubSeason_Biome_BlockPos.invoke(null, subSeason, biome, pos);
         }
         catch (Exception e)
         {
