@@ -8,7 +8,9 @@ public class ReflectionUtils {
     public static Method getMethod(String className, String methodName, Class<?>... params) {
         try {
             Class<?> clazz = Class.forName(className);
-            return clazz.getMethod(methodName, params);
+            Method method = clazz.getMethod(methodName, params);
+            method.setAccessible(true);
+            return method;
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
