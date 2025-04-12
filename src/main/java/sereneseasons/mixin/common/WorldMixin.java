@@ -42,7 +42,7 @@ public abstract class WorldMixin {
             ),
             cancellable = true
     )
-    public void rewriteIsRainingAt(BlockPos position, CallbackInfoReturnable<Boolean> cir) {
+    public void injectIsRainingAt(BlockPos position, CallbackInfoReturnable<Boolean> cir) {
         World world = (World) (Object) this;
         ISeasonState seasonState = SeasonHelper.getSeasonState(world);
         cir.setReturnValue(SeasonASMHelper.isRainingAtInSeason(world, position, seasonState));
